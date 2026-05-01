@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Músicas | Nossas Memórias</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+    <h1>🎵 Nossa Trilha Sonora</h1>
+    <p>As músicas que contam a nossa história</p>
+</header>
+
+<a href="index.html" class="voltar">← Voltar</a>
+
+
+
+   <section class="musicas">
+
+    <!-- TOCANDO AGORA -->
+    <div class="agora">
+        <img id="capa" src="https://via.placeholder.com/300" alt="capa">
+        <h2 id="titulo">Escolha uma música 💚</h2>
+    </div>
+
+    <!-- PLAYER -->
+    <div class="player">
+        <iframe id="player"
+        style="border-radius:12px" 
+        src=""
+        width="100%" height="152" frameBorder="0" 
+        allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+        </iframe>
+    </div>
+
+    <!-- LISTA DE MÚSICAS -->
+    <div class="lista-musicas">
+
+        <div class="musica" onclick="tocar(
+            'https://open.spotify.com/embed/track/ID1',
+            'https://i.scdn.co/image/IDCAPA1',
+            'Nome da música - Artista'
+        )">
+            🎵 Música 1
+        </div>
+
+        <div class="musica" onclick="tocar(
+            'https://open.spotify.com/embed/track/ID2',
+            'https://i.scdn.co/image/IDCAPA2',
+            'Outra música especial ❤️'
+        )">
+            🎵 Música 2
+        </div>
+
+    </div>
+
+</section>
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fotos | Nossas Memórias</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+    <h1>📸 Nossas Fotos</h1>
+    <p>Momentos que guardamos pra sempre</p>
+</header>
+
+<a href="index.html" class="voltar">← Voltar</a>
+
+<section class="galeria">
+
+    <!-- DUPLIQUE ESTE BLOCO PARA NOVAS FOTOS -->
+    <img src="img/fotos/foto1.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto2.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto3.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto4.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto5.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto6.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto7.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto8.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto9.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto10.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto11.jpeg" onclick="abrir(this)">
+    <img src="img/fotos/foto12.jpeg" onclick="abrir(this)">
+    
+
+</section>
+
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="fechar()">
+    <img id="imgGrande">
+</div>
+
+<script>
+function abrir(img) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("imgGrande").src = img.src;
+}
+
+function fechar() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+
+</body>
+</html>

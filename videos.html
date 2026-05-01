@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vídeos | Nossas Memórias</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+<header>
+    <h1>🎥 Nossos Vídeos</h1>
+    <p>Momentos que ganharam movimento</p>
+</header>
+
+<a href="index.html" class="voltar">← Voltar</a>
+
+<section class="feed-videos">
+
+   <div class="video-card">
+
+    <div class="video-wrapper">
+        <video muted loop playsinline>
+            <source src="img/videos/video3.mp4" type="video/mp4">
+        </video>
+
+        <!-- BOTÕES -->
+        <div class="video-actions">
+            <button class="sound-btn">🔇</button>
+            <button class="like-btn">❤</button>
+        </div>
+    </div>
+
+    <p>Uma cantora profissional</p>
+</div>
+
+<div class="video-card">
+
+    <div class="video-wrapper">
+        <video muted loop playsinline>
+            <source src="img/videos/video1.mp4" type="video/mp4">
+        </video>
+
+        <!-- BOTÕES -->
+        <div class="video-actions">
+            <button class="sound-btn">🔇</button>
+            <button class="like-btn">❤</button>
+        </div>
+    </div>
+
+    <p>BC com a galera</p>
+</div>
+
+<div class="video-card">
+
+    <div class="video-wrapper">
+        <video muted loop playsinline>
+            <source src="img/videos/video2.mp4" type="video/mp4">
+        </video>
+
+        <!-- BOTÕES -->
+        <div class="video-actions">
+            <button class="sound-btn">🔇</button>
+            <button class="like-btn">❤</button>
+        </div>
+    </div>
+
+    <p>Salsa e arepas</p>
+</div>
+
+</section>
+
+</div>
+
+<script>
+const videos = document.querySelectorAll("video");
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.play();
+        } else {
+            entry.target.pause();
+        }
+    });
+}, {
+    threshold: 0.7
+});
+
+videos.forEach(video => {
+    observer.observe(video);
+});
+
+/* SOM */
+document.querySelectorAll(".sound-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        const video = btn.closest(".video-wrapper").querySelector("video");
+
+        video.muted = !video.muted;
+        btn.textContent = video.muted ? "🔇" : "🔊";
+    });
+});
+
+/* LIKE */
+document.querySelectorAll(".like-btn").forEach((btn) => {
+    btn.addEventListener("click", () => {
+        btn.classList.toggle("liked");
+    });
+});
+</script>
+
+</body>
+</html>

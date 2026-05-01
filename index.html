@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nós</title>
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <header>
+        <h1>Rodrigo & Yasmin</h1>
+        <p>Um acervo de nós</p>
+    </header>
+
+    <section class="contador">
+        <h2>Snt. Antonio de Lisboa</h2>
+        <p id="tempo"></p>
+    </section>
+
+    <nav class="menu">
+    <a href="fotos.html">📸 Fotos</a>
+    <a href="videos.html">🎥 Vídeos</a>
+    <a href="textos.html">✍️ Textos</a>
+    <!--<a href="musicas.html">🎵 Músicas</a> -->
+    <a href="conversas.html">💬 Conversas</a>
+</nav>
+
+    <footer>
+        <p>Desde 05 de maio de 2023</p>
+    </footer>
+
+</div>
+
+<script>
+function atualizarContador() {
+    const inicio = new Date("2023-05-05");
+    const hoje = new Date();
+
+    let anos = hoje.getFullYear() - inicio.getFullYear();
+    let meses = hoje.getMonth() - inicio.getMonth();
+    let dias = hoje.getDate() - inicio.getDate();
+
+    if (dias < 0) {
+        meses--;
+        dias += 30;
+    }
+
+    if (meses < 0) {
+        anos--;
+        meses += 12;
+    }
+
+    document.getElementById("tempo").innerText =
+        anos + " anos, " + meses + " meses e " + dias + " dias";
+}
+
+atualizarContador();
+</script>
+
+</body>
+</html>
